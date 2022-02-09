@@ -59,7 +59,7 @@ data = {
 datasets = []
 sets = []
 for p in parti:
-	datasets.append(p)
+	datasets.append(p.capitalize())
 	sets.append(parti[p])
 	
 	
