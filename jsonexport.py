@@ -24,9 +24,10 @@ con.close()
 
 print("Exporting data to json...")
 
-sd = datetime.date(datetime.datetime.now().year, 1, 1)
-ed = datetime.date.today()
 delta = datetime.timedelta(days=1)
+sd = datetime.date(datetime.datetime.now().year, 1, 1)
+ed = datetime.date.today() - delta
+
 
 parti = {}
 label = []
