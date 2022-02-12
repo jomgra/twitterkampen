@@ -45,6 +45,7 @@ class site():
 		for i in range(len(self.pages)):
 			if self.pages[i]["id"] == self._cleanid(id):
 				self.pages.pop(i)
+				break
 		self.pages.append(page)
 		return
 
@@ -52,6 +53,7 @@ class site():
 		for i in range(len(self.pages)):
 			if self.pages[i]["id"] == self._cleanid(id):
 				self.pages.pop(i)
+				break
 		return
 
 	def _cleanid(self, idTxt):
