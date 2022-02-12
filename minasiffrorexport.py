@@ -36,8 +36,9 @@ class site():
 			self.exist = False
 		return
 		
-	def addPage(self, id, title, desc):
+	def addPage(self, index, id, title, desc):
 		page = {
+			"index": int(index),
 			"id": self._cleanid(id),
 			"title": title,
 			"desc": desc
@@ -46,7 +47,8 @@ class site():
 			if self.pages[i]["id"] == self._cleanid(id):
 				self.pages.pop(i)
 				break
-		self.pages.append(page)
+		self.pages.append(page)	
+		self.pages.sort(key=lambda x: x["index"])
 		return
 
 	def removePage(self, id):
@@ -84,6 +86,7 @@ class site():
 					print("Created:", self.file)
 		except:
 			print("Couldn't save file:", self.file)
+
 
 #  CHARTJS CLASS  =================
 #
@@ -272,6 +275,7 @@ chart.save(opath, "tweetkampen")
 minasiffror = site(opath)
 
 minasiffror.addPage(
+	10,
 	"tweetkampen",
 	"Tweetkampen",
 	"Vilket parti är mest aktivt på Twitter? Följ det ackumulerade antalet tweets från riksdagspartiernas officiella twitterkonton. Uppgifterna uppdateras automatiskt varje dag."
