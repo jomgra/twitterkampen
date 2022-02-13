@@ -108,7 +108,6 @@ class chartjs:
 		self.options = {
 			"maintainAspectRatio": False,
 			"plugins": {
-				"display": False,
 				"legend": {},
 				"tooltip": {}
 			},
